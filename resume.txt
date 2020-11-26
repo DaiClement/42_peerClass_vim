@@ -1,0 +1,103 @@
+Pratiquement tout ce qui est dans ce résumé est dans le tuto 'vimtutor'.
+N'hésitez pas à essayer.
+Voici un liste de source non-exaustive:
+- https://vim.rtorr.com/
+- http://www.viemu.com/vi-vim-cheat-sheet.gif
+
+On commence en mode normal.
+
+-- Mode insert
+i		d'entrer en mode insert, ça permet d'écrire des caractères.
+
+Vous savez également sortir du mode insert avec échap
+On arrive en mode normal.
+
+A		pour aller à la fin de la ligne et entrer en mode insert
+o		pour sauter une ligne puis entrer en mode insert
+
+ctrl+n	pour faire de l'auto-completion (en avant)
+ctrl+p	pour faire de l'auto completion (en arrière)
+
+-- Mode normal
+Dans le mode normal on peut se déplacer avec les touches hjkl
+h		pour aller à gauche
+l		pour aller à droite
+j 		pour aller en bas
+k		pour aller en haut.
+
+Mais on peut aller aussi aller mot par mot avec w
+
+Avec ça vim permet de répéter une action.
+
+3j		va faire se déplacer le curseur de 3 lignes vers le bas.
+10k		va faire se déplacer le curseur de 10 lignes vers le haut.
+5w 		pour se déplacer de 5 'mots'
+
+On peut également choisir la ligne où on veut aller avec G ou gg
+G		permet d'aller à la fin du fichier
+gg		permet d'aller au début.
+Si vous specifiez la ligne, on peut aller directement à la bonne ligne.
+- exemple gcc -> error ligne 1709
+1709G
+on va directement à la ligne 1709
+
+$		pour aller à la fin d'une ligne
+0		pour aller au début d'une ligne
+
+Avec ça on peut utiliser yy pour copier une ligne et p pour coller (mais seulement dans vim)
+yyp
+
+x		pour effacer un caractére en mode normal
+
+r		pour remplacer un caractère
+
+dd		pour effacer une ligne.
+d5d		pour effacer 5 lignes
+dG		pour tout effacer en dessous du curseur
+
+u pour revenir en arrière (comme une sorte de ctrl+z)
+ctrl+r pour refaire ce qui à été annulé (ou annuler de qu'on a annulé ou repartir en avant, bref vous avez compris quoi
+
+v pour le mode visuel peut être combiné avec tous les commandes du mode normal
+exemple vGy ggP
+V pour prendre toute la ligne 
+
+v pour le mode visuel peut être combiné avec tous les commandes du mode normal
+- exemple vGy ggP
+visuel mode, prendre tout depuis le curseur et jusqu'en bas du fichier, copier, aller au début du fichier, coller.
+
+
+-- Ligne de commande
+On peut aussi utilise vim en ligne de commande
+Il faut être en mode normal puis commencer par ':'
+Tout ce que vous pouvez écrire en ligne de commande peut être ajouter avec votre ~/.vimrc
+Vous connaissez déjà :w :wq :x
+
+:e name 	pour ouvrir un fichier 'name'
+:r name		pour ajouter tout le contenu du fichier 'name' sous le curseur
+:h p		pour avoir le man de la commande 'p'
+
+:set nu		pour afficher les numeros de ligne sur la gauche
+:set nonu	pour enlever l'affichage des numeros de ligne
+
+:syntax on	pour mettre la coloration syntaxique
+:syntax off pour retirer la coloration syntaxique
+
+:set mouse=a	pour rendre la souris utilisable dans vim
+
+:%s/foo/bar/g	pour remplacer tous les 'foo' par des 'bar' dans tout le fichier
+:5,25s/foo/bar/g	pour remplacer tous les 'foo' par dees 'bar' entrer les ligne 5 et 25
+
+/foo		pour chercher le mot 'foo' dans le fichier
+*			pour passer au mot suivant similaire au mot en dessous du curseur
+
+-- pour aider a la norme 42
+:set		 colorcolumn=80		pour mettre un ligne de couleur (rouge par defaut) à la 81e colonne
+:set		 tabstop=4		pour imposer 4 espaces par tabulation
+:set		 shiftwidth=4	pour imposer 4 espaces par tabulation
+
+Afficher les espaces 'inutiles' au début et à la fin d'une ligne.
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
+
+
