@@ -1,2 +1,2 @@
-To use my .vimrc type the following command:
-cp ./.vimrc ~/.vimrc
+To use my .vimrc type the following command: <br>
+```cp ./.vimrc ~/.vimrc```
